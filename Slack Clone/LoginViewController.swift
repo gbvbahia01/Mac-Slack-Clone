@@ -16,9 +16,10 @@ class LoginViewController: NSViewController {
       // Do any additional setup after loading the view.
    }
 
-   override var representedObject: Any? {
-      didSet {
-      // Update the view, if already loaded.
+
+   @IBAction func createAccountClicked(_ sender: Any) {
+      if let mainWC = view.window?.windowController as? MainWindowController {
+         mainWC.moveToCreateAccount()
       }
    }
 

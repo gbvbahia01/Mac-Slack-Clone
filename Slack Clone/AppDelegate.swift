@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Parse
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -14,7 +15,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
    func applicationDidFinishLaunching(_ aNotification: Notification) {
-      // Insert code here to initialize your application
+      let configuration = ParseClientConfiguration { (confingThing: ParseMutableClientConfiguration) in
+         confingThing.applicationId = "***"
+         //confingThing.clientKey = ""
+         confingThing.server = "http://***/parse"
+      }
+      Parse.initialize(with: configuration)
    }
 
    func applicationWillTerminate(_ aNotification: Notification) {
