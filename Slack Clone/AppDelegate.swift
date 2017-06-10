@@ -16,9 +16,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
    func applicationDidFinishLaunching(_ aNotification: Notification) {
       let configuration = ParseClientConfiguration { (confingThing: ParseMutableClientConfiguration) in
-         confingThing.applicationId = "paser_gbvbahia_macios"
+         confingThing.applicationId = "***"
          //confingThing.clientKey = ""
-         confingThing.server = "http://pasergbvbahia.herokuapp.com/parse"
+         confingThing.server = "http://***/parse"
       }
       Parse.initialize(with: configuration)
    }
