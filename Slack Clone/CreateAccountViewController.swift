@@ -29,14 +29,41 @@ class CreateAccountViewController: NSViewController, NotifierProtocol {
    }
    
    @IBAction func chooseImageClicked(_ sender: Any) {
+      let openPanel = NSOpenPanel()
+      openPanel.allowsMultipleSelection = false
+      openPanel.canChooseDirectories = false
+      openPanel.canCreateDirectories = false
+      openPanel.canChooseFiles = true
+      openPanel.begin { (result) in
+         if result == NSFileHandlingPanelOKButton {
+            if let url = openPanel.urls.first {
+               if let image = NSImage(contentsOf: url) {
+                  self.profilePicImageView.image = image
+               }
+            }
+         }
+      }
    }
    
    @IBAction func createAccountClicked(_ sender: Any) {
+      PFUser.logOut()
+      var profilePicFile : Data? = nil
+      if let img = self.profilePicImageView.image {
+         profilePicFile = jpegDataFrom(image: img)
+      }
+      
       let user = UserInfo(email: emailTextField.stringValue,
                           pass: passwordTextField.stringValue,
                           name: nameTextField.stringValue,
-                          dataImg: nil)
+                          dataImg: profilePicFile)
       userDao?.saveNewUser(userInfo: user)
+   }
+   
+   func jpegDataFrom(image:NSImage) -> Data {
+      let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil)!
+      let bitmapRep = NSBitmapImageRep(cgImage: cgImage)
+      let jpegData = bitmapRep.representation(using: NSBitmapImageFileType.JPEG, properties: [:])!
+      return jpegData
    }
    
    func notify(type: String, error: Error?) {

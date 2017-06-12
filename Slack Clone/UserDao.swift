@@ -25,7 +25,9 @@ class UserDao {
       user.password = userInfo.pass;
       user.username = userInfo.email;
       user["name"] = userInfo.name;
-      
+      if let data = userInfo.dataImg {
+         user["profilePic"] = PFFile(data: data)
+      }
       user.signUpInBackground { (success: Bool, error: Error?) in
             self.notifier.notify(type: UserDao.NEW_USER_CREATED, error: error)
       }
