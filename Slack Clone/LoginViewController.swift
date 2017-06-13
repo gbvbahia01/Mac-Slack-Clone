@@ -7,22 +7,39 @@
 //
 
 import Cocoa
+import Parse
 
 class LoginViewController: NSViewController {
-
+   
+   @IBOutlet weak var emailTextField: NSTextField!
+   
+   @IBOutlet weak var passwordTextField: NSSecureTextField!
+   
    override func viewDidLoad() {
       super.viewDidLoad()
-
+      
       // Do any additional setup after loading the view.
    }
-
-
+   
+   @IBAction func loginClicked(_ sender: Any) {
+      PFUser.logInWithUsername(inBackground: emailTextField.stringValue,
+                               password: passwordTextField.stringValue) { (
+                                 user: PFUser?, error: Error?) in
+                                 if (error == nil) {
+                                    print("Logged");
+                                 }
+                                 else {
+                                    print("problem")
+                                 }
+      }
+   }
+   
    @IBAction func createAccountClicked(_ sender: Any) {
       if let mainWC = view.window?.windowController as? MainWindowController {
          mainWC.moveToCreateAccount()
       }
    }
-
-
+   
+   
 }
 
