@@ -73,7 +73,9 @@ class CreateAccountViewController: NSViewController, NotifierProtocol {
       }
       
       if (UserDao.NEW_USER_CREATED == type) {
-         print(UserDao.NEW_USER_CREATED)
+         if let mainWC = self.view.window?.windowController as? MainWindowController {
+            mainWC.moveToChat()
+         }
       }
    }
 }

@@ -12,6 +12,8 @@
 		7906F3561EEA21D8003A7B84 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7906F3551EEA21D8003A7B84 /* LoginViewController.swift */; };
 		7906F3581EEA21D8003A7B84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7906F3571EEA21D8003A7B84 /* Assets.xcassets */; };
 		7906F35B1EEA21D8003A7B84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7906F3591EEA21D8003A7B84 /* Main.storyboard */; };
+		793F852C1EF0A4820044AC5F /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793F852B1EF0A4820044AC5F /* SplitViewController.swift */; };
+		793F852E1EF0AB900044AC5F /* ChannelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793F852D1EF0AB900044AC5F /* ChannelsViewController.swift */; };
 		795A95A91EEB83EF0007E897 /* UserDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795A95A81EEB83EF0007E897 /* UserDao.swift */; };
 		795A95AB1EEB848F0007E897 /* NotifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795A95AA1EEB848F0007E897 /* NotifierProtocol.swift */; };
 		7983E0581EEB6B320010C05D /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983E0571EEB6B320010C05D /* MainWindowController.swift */; };
@@ -26,6 +28,8 @@
 		7906F3571EEA21D8003A7B84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7906F35A1EEA21D8003A7B84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7906F35C1EEA21D8003A7B84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		793F852B1EF0A4820044AC5F /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		793F852D1EF0AB900044AC5F /* ChannelsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelsViewController.swift; sourceTree = "<group>"; };
 		795A95A81EEB83EF0007E897 /* UserDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDao.swift; sourceTree = "<group>"; };
 		795A95AA1EEB848F0007E897 /* NotifierProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifierProtocol.swift; sourceTree = "<group>"; };
 		7983E0571EEB6B320010C05D /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				7983E0571EEB6B320010C05D /* MainWindowController.swift */,
 				7906F3551EEA21D8003A7B84 /* LoginViewController.swift */,
 				7983E0591EEB6BD00010C05D /* CreateAccountViewController.swift */,
+				793F852B1EF0A4820044AC5F /* SplitViewController.swift */,
+				793F852D1EF0AB900044AC5F /* ChannelsViewController.swift */,
 				795A95AA1EEB848F0007E897 /* NotifierProtocol.swift */,
 				795A95A81EEB83EF0007E897 /* UserDao.swift */,
 				7983E05B1EEB81580010C05D /* UserInfo.swift */,
@@ -223,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				793F852E1EF0AB900044AC5F /* ChannelsViewController.swift in Sources */,
 				7983E05A1EEB6BD00010C05D /* CreateAccountViewController.swift in Sources */,
 				7906F3561EEA21D8003A7B84 /* LoginViewController.swift in Sources */,
 				7906F3541EEA21D8003A7B84 /* AppDelegate.swift in Sources */,
@@ -230,6 +237,7 @@
 				795A95AB1EEB848F0007E897 /* NotifierProtocol.swift in Sources */,
 				7983E05C1EEB81580010C05D /* UserInfo.swift in Sources */,
 				7983E0581EEB6B320010C05D /* MainWindowController.swift in Sources */,
+				793F852C1EF0A4820044AC5F /* SplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

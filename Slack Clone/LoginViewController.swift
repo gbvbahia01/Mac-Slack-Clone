@@ -17,7 +17,7 @@ class LoginViewController: NSViewController {
    
    override func viewDidLoad() {
       super.viewDidLoad()
-      
+      emailTextField.stringValue = "g@g.com"
       // Do any additional setup after loading the view.
    }
    
@@ -26,7 +26,9 @@ class LoginViewController: NSViewController {
                                password: passwordTextField.stringValue) { (
                                  user: PFUser?, error: Error?) in
                                  if (error == nil) {
-                                    print("Logged");
+                                    if let mainWC = self.view.window?.windowController as? MainWindowController {
+                                       mainWC.moveToChat()
+                                    }
                                  }
                                  else {
                                     print("problem")

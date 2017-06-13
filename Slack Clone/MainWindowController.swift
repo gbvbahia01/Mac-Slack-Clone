@@ -12,6 +12,7 @@ class MainWindowController: NSWindowController {
 
    var loginVC : LoginViewController?
    var createAccountVC : CreateAccountViewController?
+   var splitViewController : SplitViewController?
    
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -27,5 +28,12 @@ class MainWindowController: NSWindowController {
    
    func moveToLogin() {
       window?.contentView = loginVC?.view
+   }
+   
+   func moveToChat() {
+      if splitViewController == nil {
+         splitViewController = storyboard?.instantiateController(withIdentifier: "splitVC") as? SplitViewController
+      }
+      window?.contentView = splitViewController?.view;
    }
 }

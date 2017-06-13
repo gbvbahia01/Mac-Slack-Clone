@@ -919,6 +919,97 @@
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
+        <!--Split View Controller-->
+        <scene sceneID="24b-Rl-HnF">
+            <objects>
+                <splitViewController storyboardIdentifier="splitVC" id="4gb-G0-3qD" customClass="SplitViewController" customModule="Slack_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="MiA-c4-iLe"/>
+                        <splitViewItem id="g7s-dC-rXe"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="ATC-dg-t6f">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </splitView>
+                    <connections>
+                        <segue destination="XUc-nv-hvy" kind="relationship" relationship="splitItems" id="kec-nE-MCQ"/>
+                        <segue destination="Pa6-cd-PWx" kind="relationship" relationship="splitItems" id="oNZ-oQ-T73"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="S21-ds-tdy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60" y="1177"/>
+        </scene>
+        <!--Channels View Controller-->
+        <scene sceneID="LMw-qI-Am3">
+            <objects>
+                <viewController id="XUc-nv-hvy" customClass="ChannelsViewController" customModule="Slack_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="k8M-3W-fhv">
+                        <rect key="frame" x="0.0" y="0.0" width="160" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VWL-U2-ayG">
+                                <rect key="frame" x="30" y="190" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="E2E-bA-l3V"/>
+                                    <constraint firstAttribute="height" constant="100" id="S9j-YT-52t"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="xmac_accounting_100" id="ZDR-Vo-za8"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYF-eX-T5a">
+                                <rect key="frame" x="52" y="156" width="57" height="24"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="cVW-C5-dKU">
+                                    <font key="font" metaFont="system" size="20"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="39h-YS-dV2">
+                                <rect key="frame" x="39" y="118" width="83" height="32"/>
+                                <buttonCell key="cell" type="push" title="Logout" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6fA-d3-rgL">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="logoutClicked:" target="XUc-nv-hvy" id="CSo-8C-1bn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="39h-YS-dV2" firstAttribute="centerX" secondItem="k8M-3W-fhv" secondAttribute="centerX" id="01g-zO-hnf"/>
+                            <constraint firstItem="VWL-U2-ayG" firstAttribute="centerX" secondItem="k8M-3W-fhv" secondAttribute="centerX" id="4Sd-se-Dwm"/>
+                            <constraint firstItem="LYF-eX-T5a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="k8M-3W-fhv" secondAttribute="leading" constant="10" id="ATE-Aa-WEs"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LYF-eX-T5a" secondAttribute="trailing" constant="10" id="BvB-TP-Nkw"/>
+                            <constraint firstItem="VWL-U2-ayG" firstAttribute="top" secondItem="k8M-3W-fhv" secondAttribute="top" constant="10" id="R5g-pN-DJ5"/>
+                            <constraint firstItem="LYF-eX-T5a" firstAttribute="top" secondItem="VWL-U2-ayG" secondAttribute="bottom" constant="10" id="eK3-VX-ga8"/>
+                            <constraint firstItem="39h-YS-dV2" firstAttribute="top" secondItem="LYF-eX-T5a" secondAttribute="bottom" constant="10" id="ldO-4u-P1d"/>
+                            <constraint firstItem="VWL-U2-ayG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="k8M-3W-fhv" secondAttribute="leading" constant="25" id="rXr-qU-49Z"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VWL-U2-ayG" secondAttribute="trailing" constant="25" id="rmf-la-Nw0"/>
+                            <constraint firstItem="LYF-eX-T5a" firstAttribute="centerX" secondItem="k8M-3W-fhv" secondAttribute="centerX" id="sGc-nG-c7j"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="LYF-eX-T5a" id="FTb-8K-TVH"/>
+                        <outlet property="profilePicImageView" destination="VWL-U2-ayG" id="M9G-v6-3Jn"/>
+                    </connections>
+                </viewController>
+                <customObject id="p6w-VK-8Yi" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="443" y="1014"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Eqg-xe-BqA">
+            <objects>
+                <viewController id="Pa6-cd-PWx" sceneMemberID="viewController">
+                    <view key="view" id="rTP-Oj-CQu">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="ITK-Ji-8Mb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="576" y="1367"/>
+        </scene>
     </scenes>
     <resources>
         <image name="xmac_accounting_100" width="100" height="100"/>
