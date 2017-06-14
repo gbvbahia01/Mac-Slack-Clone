@@ -15,12 +15,18 @@ class ChannelsViewController: NSViewController {
    
    @IBOutlet weak var nameLabel: NSTextField!
    
+   var addChannelWC : NSWindowController?
+   
     override func viewDidLoad() {
         super.viewDidLoad()
     }
    
    override func viewDidAppear() {
        loadUserData()
+   }
+   
+   override func viewWillDisappear() {
+      addChannelWC?.close()
    }
    
    func loadUserData() {
@@ -47,4 +53,11 @@ class ChannelsViewController: NSViewController {
          mainWC.moveToLogin()
       }
    }
+   
+   @IBAction func addClicked(_ sender: Any) {
+         addChannelWC = storyboard?.instantiateController(withIdentifier: "addChannelWC") as? NSWindowController
+         addChannelWC?.showWindow(nil)
+   }
+   
 }
+
