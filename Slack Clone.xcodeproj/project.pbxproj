@@ -21,6 +21,7 @@
 		7983E05C1EEB81580010C05D /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7983E05B1EEB81580010C05D /* UserInfo.swift */; };
 		79A3EFE01EF20781003D21CB /* AddChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3EFDF1EF20781003D21CB /* AddChannelViewController.swift */; };
 		79A3EFE21EF21434003D21CB /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3EFE11EF21434003D21CB /* ChatViewController.swift */; };
+		79A3EFE41EF2284B003D21CB /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3EFE31EF2284B003D21CB /* ChatCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		7983E05B1EEB81580010C05D /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		79A3EFDF1EF20781003D21CB /* AddChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddChannelViewController.swift; sourceTree = "<group>"; };
 		79A3EFE11EF21434003D21CB /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		79A3EFE31EF2284B003D21CB /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		C0BECA96E43E80BD2FBA3DB3 /* Pods_Slack_Clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slack_Clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0250A5EB2E7A5EE293761A9 /* Pods-Slack Clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slack Clone.release.xcconfig"; path = "Pods/Target Support Files/Pods-Slack Clone/Pods-Slack Clone.release.xcconfig"; sourceTree = "<group>"; };
 		FDCBF95E4782762D3A7F4D2E /* Pods-Slack Clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slack Clone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Slack Clone/Pods-Slack Clone.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				793F852B1EF0A4820044AC5F /* SplitViewController.swift */,
 				793F852D1EF0AB900044AC5F /* ChannelsViewController.swift */,
 				79A3EFE11EF21434003D21CB /* ChatViewController.swift */,
+				79A3EFE31EF2284B003D21CB /* ChatCell.swift */,
 				79A3EFDF1EF20781003D21CB /* AddChannelViewController.swift */,
 				795A95AA1EEB848F0007E897 /* NotifierProtocol.swift */,
 				795A95A81EEB83EF0007E897 /* UserDao.swift */,
@@ -240,6 +243,7 @@
 				79A3EFE21EF21434003D21CB /* ChatViewController.swift in Sources */,
 				7983E05A1EEB6BD00010C05D /* CreateAccountViewController.swift in Sources */,
 				7906F3561EEA21D8003A7B84 /* LoginViewController.swift in Sources */,
+				79A3EFE41EF2284B003D21CB /* ChatCell.swift in Sources */,
 				7906F3541EEA21D8003A7B84 /* AppDelegate.swift in Sources */,
 				795A95A91EEB83EF0007E897 /* UserDao.swift in Sources */,
 				795A95AB1EEB848F0007E897 /* NotifierProtocol.swift in Sources */,

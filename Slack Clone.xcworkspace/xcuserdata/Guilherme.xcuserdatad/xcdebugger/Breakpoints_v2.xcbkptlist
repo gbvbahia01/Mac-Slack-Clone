@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slack Clone/ChatViewController.swift"
-            timestampString = "519185332.424468"
+            timestampString = "519190209.553373"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "updateChannel(channel:)"
             landmarkType = "7">
          </BreakpointContent>
