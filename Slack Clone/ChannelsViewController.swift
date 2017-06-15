@@ -9,20 +9,26 @@
 import Cocoa
 import Parse
 
-class ChannelsViewController: NSViewController {
+class ChannelsViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 
    @IBOutlet weak var profilePicImageView: NSImageView!
-   
    @IBOutlet weak var nameLabel: NSTextField!
+   @IBOutlet weak var tableView: NSTableView!
    
+   var chatVC : ChatViewController?
    var addChannelWC : NSWindowController?
+   var channels : [PFObject] = []
+   
    
     override func viewDidLoad() {
         super.viewDidLoad()
+      tableView.dataSource = self;
+      tableView.delegate = self;
     }
    
    override func viewDidAppear() {
        loadUserData()
+      getChannels()
    }
    
    override func viewWillDisappear() {
@@ -59,5 +65,40 @@ class ChannelsViewController: NSViewController {
          addChannelWC?.showWindow(nil)
    }
    
+   func getChannels() {
+      let query = PFQuery(className: "Channel")
+      query.order(byAscending: "title")
+      query.findObjectsInBackground { (channels: [PFObject]?, error: Error?) in
+         if channels != nil {
+            self.channels = channels!
+            self.tableView.reloadData()
+         }
+      }
+   }
+   
+   
+   func numberOfRows(in tableView: NSTableView) -> Int {
+      return channels.count
+   }
+   
+   func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+      let channel = channels[row]
+      
+      if let cell = tableView.make(withIdentifier: "channelCell", owner: nil) as? NSTableCellView {
+         if let title = channel["title"] as? String {
+            cell.textField?.stringValue = "#\(title)"
+            return cell
+         }
+         
+      }
+      return nil
+   }
+   
+   func tableViewSelectionDidChange(_ notification: Notification) {
+      if tableView.selectedRow >= 0 {
+         let channel = channels[tableView.selectedRow]
+         chatVC?.updateChannel(channel: channel)
+      }
+   }
 }
 
